@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luci Hill - Marketing Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #fdfcfb;
+        }
+        
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        header {
+            background: linear-gradient(to right, #1a1a1a 0%, #2d3748 100%);
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,94,184,0.1) 0%, rgba(184,0,94,0.1) 100%);
+        }
+        
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        header h1 {
+            font-size: 4rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+            color: #fff;
+            font-style: italic;
+        }
+        
+        header p {
+            font-size: 1.3rem;
+            color: #e0e0e0;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        
+        .intro {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #fff 0%, #f8f8f8 100%);
+        }
+        
+        .intro h2 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+            font-style: italic;
+            border-bottom: 2px solid #d4af37;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+        
+        .intro p {
+            color: #333;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+        
+        .project {
+            padding: 70px 0;
+            border-top: 1px solid #d4af37;
+            background: #fff;
+        }
+        
+        .project:nth-child(even) {
+            background: #fafafa;
+        }
+        
+        .project h2 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            font-style: italic;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .project h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 80%;
+            background: linear-gradient(to bottom, #d4af37, #b8860b);
+        }
+        
+        .project-tag {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 35px;
+            display: block;
+            padding-left: 20px;
+            font-style: italic;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            margin: 50px 0;
+            padding: 50px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d3748 100%);
+            position: relative;
+        }
+        
+        .metrics::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, rgba(184,134,11,0.1) 100%);
+        }
+        
+        .metric-card {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .metric-card h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #d4af37;
+            font-style: italic;
+        }
+        
+        .metric-card p {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .section {
+            margin: 45px 0;
+        }
+        
+        .section h3 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: #1a1a1a;
+            font-style: italic;
+            border-left: 4px solid #d4af37;
+            padding-left: 16px;
+        }
+        
+        .section p {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        
+        .section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .section li {
+            padding: 16px 20px;
+            color: #333;
+            border-left: 2px solid #e5e5e5;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+        }
+        
+        .section li:hover {
+            border-left-color: #d4af37;
+            background: #fafafa;
+            transform: translateX(5px);
+        }
+        
+        .section li strong {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(to right, #fafafa 0%, #f5f5f5 100%);
+            padding: 35px;
+            margin: 35px 0;
+            border-left: 4px solid #d4af37;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .highlight-box strong {
+            color: #1a1a1a;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .highlight-box p {
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
+        footer {
+            background: linear-gradient(to right, #1a1a1a 0%, #2d3748 100%);
+            color: white;
+            padding: 80px 0;
+            margin-top: 0;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212,175,55,0.1) 0%, rgba(184,134,11,0.1) 100%);
+        }
+        
+        footer .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        footer h2 {
+            font-size: 2.4rem;
+            font-weight: 400;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+        
+        footer p {
+            color: #c0c0c0;
+            margin-bottom: 35px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-links {
+            margin-top: 35px;
+        }
+        
+        .contact-links a {
+            color: #1a1a1a;
+            background: #d4af37;
+            padding: 16px 40px;
+            margin-right: 20px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .contact-links a:hover {
+            background: #b8860b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212,175,55,0.4);
+        }
+        
+        .footer-note {
+            margin-top: 60px;
+            padding-top: 35px;
+            border-top: 1px solid #444;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            header {
+                padding: 60px 0 50px;
+            }
+            
+            header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .metrics {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                padding: 35px 25px;
+            }
+            
+            .contact-links a {
+                display: block;
+                margin-bottom: 15px;
+                text-align: center;
+                margin-right: 0;
+            }
+            
+            .section li:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Luci Hill</h1>
+            <p>Marketing Strategy & Campaign Development</p>
+        </div>
+    </header>
+    
+    <div class="intro">
+        <div class="container">
+            <h2>About</h2>
+            <p>Junior marketing major at the University of Utah passionate about data-driven strategy and creative storytelling. Experienced in nonprofit marketing, brand positioning, and multi-channel campaign development through hands-on consulting projects and creative coursework. I specialize in translating complex business challenges into actionable marketing strategies that deliver measurable results. Currently seeking summer 2025 marketing internship opportunities where I can contribute strategic thinking and creative problem-solving.</p>
+        </div>
+    </div>
+    
+    <div class="intro" style="padding: 60px 0; background: #fff;">
+        <div class="container">
+            <h2>Skills & Capabilities</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px;">
+                <div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; color: #1a1a1a;">Marketing Strategy</h3>
+                    <p style="color: #666; font-size: 1rem; line-height: 1.6;">Market research & segmentation, competitive analysis, brand positioning, campaign development, donor engagement strategy</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; color: #1a1a1a;">Creative Development</h3>
+                    <p style="color: #666; font-size: 1rem; line-height: 1.6;">Advertising concepts, copywriting, creative briefs, multi-channel campaigns, content strategy, visual storytelling</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; color: #1a1a1a;">Digital Marketing</h3>
+                    <p style="color: #666; font-size: 1rem; line-height: 1.6;">Social media strategy (TikTok, Instagram, YouTube), email marketing, content calendars, performance metrics, SEO basics</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; color: #1a1a1a;">Tools & Platforms</h3>
+                    <p style="color: #666; font-size: 1rem; line-height: 1.6;">Canva, Google Workspace (Docs, Sheets, Slides), social media platforms, presentation design, basic web development (HTML/CSS)</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; color: #1a1a1a;">Research & Analysis</h3>
+                    <p style="color: #666; font-size: 1rem; line-height: 1.6;">Consumer behavior analysis, data interpretation, benchmarking studies, case study analysis, market trends</p>
+                </div>
+                <div>
+                    <h3 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 12px; color: #1a1a1a;">Project Management</h3>
+                    <p style="color: #666; font-size: 1rem; line-height: 1.6;">Strategic planning, timeline development, stakeholder communication, deliverable management, presentation skills</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="project">
+            <h2>For The Kids: Donor Engagement & Revenue Strategy</h2>
+            <span class="project-tag">Nonprofit Marketing • 3-Month Consulting Project • Goff Trailblazers Program</span>
+            
+            <div class="highlight-box">
+                <p>Developed comprehensive marketing and fundraising strategy for Utah nonprofit serving 350+ children weekly, addressing limited donor communication and revenue diversification challenges.</p>
+            </div>
+            
+            <div class="metrics">
+                <div class="metric-card">
+                    <h3>41.5%</h3>
+                    <p>Projected revenue increase from donor communication strategy</p>
+                </div>
+                <div class="metric-card">
+                    <h3>$2.4k–$5.6k</h3>
+                    <p>Annual donation increase from social media implementation</p>
+                </div>
+                <div class="metric-card">
+                    <h3>50,000+</h3>
+                    <p>Monthly social media reach across platforms</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h3>What I Delivered</h3>
+                <ul>
+                    <li>65-page strategic marketing plan with year-long implementation roadmap</li>
+                    <li>Complete social media strategy for TikTok, Instagram Reels, and YouTube Shorts projected to generate 10-25 new monthly donors</li>
+                    <li>15+ customizable email templates and annual communication calendar for donor retention</li>
+                    <li>"Christmas in July" fundraising campaign design with 4-week rollout plan and corporate matching component</li>
+                    <li>Merchandise strategy and vendor recommendations for sustainable revenue stream</li>
+                    <li>Internship program structure to increase organizational capacity by 10 hours weekly</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="project">
+            <h2>Bloom Nutrition: Integrated Advertising Campaign</h2>
+            <span class="project-tag">Creative Strategy • Multi-Channel Campaign Development</span>
+            
+            <div class="highlight-box">
+                <p>Developed full advertising campaign for wellness brand targeting women 18-35 overwhelmed by confusing health advice and crowded supplement markets.</p>
+            </div>
+            
+            <div class="section">
+                <h3>What I Delivered</h3>
+                <ul>
+                    <li>Complete campaign strategy with "Get Who To By" framework positioning Bloom as the simple, trustworthy daily nutrition solution</li>
+                    <li>30-second TV commercial concept featuring color transformation visual storytelling technique</li>
+                    <li>"Adulting is Better This Way" print advertisement series with relatable messaging for target demographic</li>
+                    <li>Experiential marketing plan: "Shake It With Bloom" high-energy public workout activation designed to create viral moments</li>
+                    <li>Post-activation social media content strategy including behind-the-scenes footage and customer interviews</li>
+                    <li>Branded merchandise line (tote bags, hoodies, wellness club apparel) for brand ambassadors</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="project">
+            <h2>Business Case Studies</h2>
+            <span class="project-tag">Strategic Analysis</span>
+            
+            <div class="section">
+                <h3>Analytical Projects</h3>
+                <p>Completed multiple in-depth case studies analyzing real business strategies across various industries. These projects demonstrated ability to:</p>
+                <ul>
+                    <li>Evaluate competitive positioning and market dynamics</li>
+                    <li>Assess marketing mix effectiveness (product, price, place, promotion)</li>
+                    <li>Identify strategic opportunities and threats</li>
+                    <li>Provide data-driven recommendations for business growth</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="project">
+            <h2>Nachos Live: Campus Market Entry Strategy</h2>
+            <span class="project-tag">Brand Repositioning • Market Analysis</span>
+            
+            <div class="highlight-box">
+                <p>Developed comprehensive market entry and repositioning strategy for food truck business transitioning from declining Lehi location to University of Utah campus market.</p>
+            </div>
+            
+            <div class="section">
+                <h3>What I Delivered</h3>
+                <ul>
+                    <li>Market segmentation analysis identifying three distinct customer groups with behavioral and demographic profiles</li>
+                    <li>Target market recommendation: undergraduate students (ages 18-23) based on volume potential and spending patterns</li>
+                    <li>Brand repositioning strategy eliminating confusing elements and focusing on shareability and affordability</li>
+                    <li>Streamlined product strategy emphasizing core offerings and group dining occasions</li>
+                    <li>"Finals Week Special" pricing strategy to capitalize on peak demand periods</li>
+                    <li>"Grand Opening Week" promotional campaign with sampling, student organization partnerships, and late-night delivery</li>
+                    <li>Location and timing recommendations based on campus foot traffic analysis</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p>Interested in discussing marketing opportunities or exploring collaboration?</p>
+            <div class="contact-links">
+                <a href="mailto:u1476236@utah.edu">Email Me</a>
+                <a href="https://www.linkedin.com/in/luci-hill-32399a291/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-note">
+                <p style="margin-bottom: 8px;">Luci Hill • Marketing Major • University of Utah • Expected Graduation: 2026</p>
+                © 2025 Luci Hill
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
